@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int h;
+    do {
+    h=get_int("Height?\n");
+    }
+    while(h<0 || h>9);
+
+
+    printf("%i \n", h);
+
+    for(int i=1; i<=h; i++){
+        for(int j=1; j<=h-i; j++) {
+            printf(" ");
+        }
+        for(int j=h-i+1; j<=h; j++) {
+            printf("#");
+        }
+        // for(int j=h+1; j<=h+2; j++) {
+            printf(" ");
+        // }
+        for(int j=h+3; j<=h+i+2; j++) {
+            printf("#");
+        }
+        for(int j=h+i+3; j<=(2*h)+2; j++) {
+            printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
